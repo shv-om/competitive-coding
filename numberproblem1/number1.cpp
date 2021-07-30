@@ -23,7 +23,7 @@ void numgame(vli A, li K, int n){
 	li max = *max_element(A.begin(), A.end());
 	
 	li start = floor((max * K)/A.size());
-	li end = start + floor(K/A.size());
+	li end = start + K;
 
 	for(li q=start; q<=end; q++){
 		for(li i=n-1; i>=0; i--){
@@ -79,9 +79,6 @@ int main(){
 		}
 
 		numgame(A, K, n);
-
-		//cout << "Case #" << i << ": " << numgame(A, K, n) << endl;
-
 	}
 
 }
