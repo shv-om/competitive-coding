@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define li long int
 #define vi vector<int>
 #define vll vector<long long int>
 
@@ -25,23 +26,29 @@ int goodnumber(int N){
 
 	int count = 0;
 
-	for(int a=4; a<=N; a++){
+	for(int a=2; a<=N; a++){
+
+		li num = a*a;
 		
-		if(a%10 == 0){
-			continue;
+		if(num > N){
+			// cout << a << ", ";
+			break;
 		}
 
 		else{
 			int divisors = 0;
 
-			for(int i=2; i <= a/2; i++){
-				if(a%i == 0){
-					divisors = divisors + 1;
+			for(int i=1; i <= sqrt(num); i++){
+				if(num%i == 0){
+					if (num/i == i){
+						divisors = divisors + 1;
+					}
+
+					else{
+						divisors = divisors + 2;
+					}
 				}
 			}
-
-			// to Add 1 and the number itself in divisors count
-			divisors = divisors + 2;
 
 			bool isoddprime;
 

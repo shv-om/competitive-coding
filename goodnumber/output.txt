@@ -1,3 +1,8 @@
-Case #0: 1
+Case #0: 2
 Case #1: 7
 Case #2: 16
+Case #3: 33
+Case #4: 79
+Case #5: 189
+Case #6: 476
+Case #7: 1271
