@@ -11,6 +11,9 @@ Input
     The first line of each test case contains two integers N and M.
     The second line of each test case contains N space separated integers, A1, A2, ..., AN.
 
+
+Below is just a normal approach to the solution of this problem...
+
 */
 
 
@@ -24,14 +27,16 @@ int sum_ceil(vi A, int M){
 
 	int i=1;
 
-	float K;
+	if(M==1){
+		return accumulate(A.begin(), A.end(), 0);
+	}
 
 	while(true){
 
-		K = 0;
+		int K = 0;
 
 		for(auto& a: A){
-			double temp = (float)a / (float)i;
+			float temp = (float)a / (float)i;
 			K = K + ceil(temp);
 		}
 
@@ -56,24 +61,25 @@ int main(){
 	
 	int T;
 
-	cin >> T;
+	scanf("%i", &T);
 
 	for(int i=0; i<T; i++){
 
 		int N, M;
 
-		cin >> N >> M;
+		scanf("%i", &N);
+		scanf("%i", &M);
 		
 		vi A;
 
 		for(int j=0; j<N; j++){
 			int e;
-			cin >> e;
+			scanf("%d", &e);
 
 			A.push_back(e);
 		}
 
-		cout << "Case #" << i << ": " << sum_ceil(A, M) << endl;
+		printf("Case #%i: %i\n", i, sum_ceil(A, M));
 	}
 
 }
